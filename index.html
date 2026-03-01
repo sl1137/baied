@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reflection Evaluator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header>
+            <h1>Reflection Evaluator</h1>
+            <p class="subtitle">AI-Driven Feedback Analysis</p>
+        </header>
+
+        <section id="input-section" class="glass-card">
+            <div class="input-header">
+                <h2>Paste Your Reflection</h2>
+                <div id="word-count" class="badge">0 / 600 words</div>
+            </div>
+            <form id="reflection-form">
+                <textarea id="reflection-text" required placeholder="Paste here..."></textarea>
+                <div class="form-actions">
+                    <button type="submit" id="submit-btn" class="btn primary">Analyze</button>
+                    <button type="button" id="mock-btn" class="btn secondary">Run Mock</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="loading-section" class="glass-card" style="display:none; text-align:center; padding:50px;">
+            <div class="spinner"></div>
+            <p>Analyzing...</p>
+        </section>
+
+        <section id="results-section" style="display:none;">
+            <div class="glass-card">
+                <h3>Summary</h3>
+                <p id="student-summary"></p>
+            </div>
+
+            <div class="feedback-grid">
+                <div id="variant-A" class="glass-card feedback-card">
+                    <h4 id="label-A">Variant A</h4>
+                    <p id="text-A"></p>
+                </div>
+                <div id="variant-B" class="glass-card feedback-card">
+                    <h4 id="label-B">Variant B</h4>
+                    <p id="text-B"></p>
+                </div>
+                <div id="variant-C" class="glass-card feedback-card">
+                    <h4 id="label-C">Variant C</h4>
+                    <p id="text-C"></p>
+                </div>
+            </div>
+
+            <div class="glass-card card-winner">
+                <h3>Winning Variant: <span id="winner-label" style="color:#f59e0b"></span></h3>
+                <p id="evaluator-notes" style="font-style:italic; margin-top:10px;"></p>
+                <button id="restart-btn" class="btn secondary" style="margin-top:20px;">Restart</button>
+            </div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
